@@ -21,7 +21,7 @@
 репозитарий и продемонстрировать преподавателю.
 */
 
-package ru.mirea.lab1;
+package ru.mirea.task1;
 
 import java.util.Scanner;
 
