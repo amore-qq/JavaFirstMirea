@@ -85,6 +85,7 @@ public class Tester {
             System.out.println("3) Вывести информацию о студенте");
             System.out.println("4) Очистить картотеку");
             System.out.println("5) Проверить картотеку на пустоту");
+            System.out.println("6) Выход из программы");
             int num = sc.nextInt();
             switch (num) {
                 case 1:
@@ -125,6 +126,9 @@ public class Tester {
                     } else {
                         System.out.println("Картотека не пуста\n");
                     }
+                    break;
+                case 6:
+                    flag = false;
                     break;
                 default:
                     System.out.println("Введено недопустимое значение\n");
