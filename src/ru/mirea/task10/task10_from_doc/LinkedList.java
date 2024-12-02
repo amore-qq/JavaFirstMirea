@@ -72,7 +72,7 @@ class StudentList {
     }
 }
 
-public class Tester {
+public class LinkedList {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StudentList list = new StudentList();
