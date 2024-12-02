@@ -1,4 +1,4 @@
-package ru.mirea.task10.task10_from_doc;
+package ru.mirea.task10.task10_from_doc.task1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
