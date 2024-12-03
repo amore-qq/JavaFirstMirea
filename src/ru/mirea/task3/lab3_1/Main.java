@@ -47,6 +47,6 @@ public class Main {
                 b.add(a[i]);
             }
         }
-        System.out.println(b.toString());
+        System.out.println(b);
     }
 }
