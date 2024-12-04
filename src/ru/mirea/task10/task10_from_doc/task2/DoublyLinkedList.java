@@ -166,8 +166,7 @@ public class DoublyLinkedList {
                     System.out.print("Введите индекс студента для удаления: ");
                     int indexRemove = sc.nextInt();
                     list.removeStudent(indexRemove);
-                    System.out.printf("Студент №%d был удален из картотеки\n", indexRemove);
-                    System.out.println();
+                    System.out.printf("Студент №%d был удален из картотеки\n\n", indexRemove);
                     break;
                 case 3:
                     System.out.print("Введите индекс студента о котором хотите получить информацию: ");
