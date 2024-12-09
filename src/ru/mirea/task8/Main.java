@@ -40,16 +40,35 @@ public class Main {
         }
     }
 
-    // task 18
-    public static int recursion4() {
+    // task 17
+    public static int recursion3() {
         java.util.Scanner sc = new java.util.Scanner(System.in);
         int n = sc.nextInt();
         if (n == 0) {
             return 0;
         } else {
-            return Math.max(n, recursion4());
+            return Math.max(n, recursion3());
         }
     }
+
+    // task 1
+    public static String recursion4(int n) {
+        int sum = 0;
+        int j = 0;
+        // Базовый случай
+        if (n == 1) {
+            System.out.print("1");
+        } else {
+            for (int i = 1; sum < n; i++) {
+                sum += i;
+                j = i;
+            }
+            // Шаг рекурсии / рекурсивное условие
+            System.out.print(recursion4(--n) + " " + j);
+        }
+        return "";
+    }
+
     public static void main(String[] args) {
         recursion(123);
         System.out.println();
@@ -57,6 +76,8 @@ public class Main {
         System.out.println();
         recursion2(0, 0);
         System.out.println();
-        System.out.println(recursion4());
+        System.out.println("Максимальное число последовательности: " + recursion3());
+        System.out.println();
+        recursion4(8);
     }
 }
