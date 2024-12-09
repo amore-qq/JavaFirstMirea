@@ -35,15 +35,28 @@ public class Main {
                 recursion2(maxi, c);
             }
         } else {
-            System.out.println(c);
+            System.out.println("Количество элементов равное максимуму последовательности: " + c
+                    + "\nМаксимальный элемент: " + maxi);
         }
     }
 
+    // task 18
+    public static int recursion4() {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        int n = sc.nextInt();
+        if (n == 0) {
+            return 0;
+        } else {
+            return Math.max(n, recursion4());
+        }
+    }
     public static void main(String[] args) {
         recursion(123);
         System.out.println();
         recursion1(123);
         System.out.println();
         recursion2(0, 0);
+        System.out.println();
+        System.out.println(recursion4());
     }
 }
