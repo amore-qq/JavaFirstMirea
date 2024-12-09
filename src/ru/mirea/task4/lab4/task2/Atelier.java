@@ -23,45 +23,45 @@ enum Sizes {
 }
 
 public class Atelier {
+    public void dressMan(Clothes[] clothes) {
+        System.out.println("Мужская одежда: ");
+        for (Clothes s : clothes) {
+            if (s instanceof MenClothing) {
+                ((MenClothing) s).dressMan();
+            }
+        }
+    }
+
+    public void dressWoman(Clothes[] clothes) {
+        System.out.println("Женская одежда: ");
+        for (Clothes s : clothes) {
+            if (s instanceof WomenClothing) {
+                ((WomenClothing) s).dressWoman();
+            }
+        }
+    }
+}
+
+class Main {
     public static void main(String[] args) {
         Clothes[] clothes = {new Pants(Sizes.S, 1500, "black"),
                 new TShirt(Sizes.XXS, 1000, "blue"),
                 new Tie(Sizes.M, 1750, "purple"),
                 new Skirt(Sizes.XS, 3350, "red")};
-        dressMan(clothes);
+        Atelier atelier = new Atelier();
+        atelier.dressMan(clothes);
         System.out.println();
-        dressWoman(clothes);
-    }
-
-    public static void dressMan(Clothes[] clothes) {
-        System.out.println("Мужская одежда: ");
-        for (Clothes s : clothes) {
-            if (s instanceof MenClothing) {
-                System.out.println(s);
-            }
-        }
-    }
-
-    public static void dressWoman(Clothes[] clothes) {
-        System.out.println("Женская одежда: ");
-        for (Clothes s : clothes) {
-            if (s instanceof WomenClothing) {
-                System.out.println(s);
-            }
-        }
+        atelier.dressWoman(clothes);
     }
 }
 
+
 interface MenClothing {
-    static String dressMan() {
-        return "Одеваем мужчину";
-    }
+    void dressMan();
 }
 
 interface WomenClothing {
-    static String dressWoman() {
-        return "Одеваем женщину";
-    }
+    void dressWoman();
 }
 
 abstract class Clothes {
@@ -93,9 +93,17 @@ class TShirt extends Clothes implements MenClothing, WomenClothing {
         super(size, cost, color);
     }
 
+    public void dressMan() {
+        System.out.println("Мужская футболка: " + this);
+    }
+
+    public void dressWoman() {
+        System.out.println("Женская футболка: " + this);
+    }
+
     @Override
     public String toString() {
-        return String.format("TShirt{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
+        return String.format("{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
     }
 }
 
@@ -103,8 +111,17 @@ class Pants extends Clothes implements MenClothing, WomenClothing {
     public Pants(Sizes size, double cost, String color) {
         super(size, cost, color);
     }
+
+    public void dressMan() {
+        System.out.println("Мужские штаны: " + this);
+    }
+
+    public void dressWoman() {
+        System.out.println("Женские штаны: " + this);
+    }
+
     public String toString() {
-        return String.format("Pants{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
+        return String.format("{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
     }
 }
 
@@ -113,8 +130,13 @@ class Skirt extends Clothes implements WomenClothing {
     public Skirt(Sizes size, double cost, String color) {
         super(size, cost, color);
     }
+
+    public void dressWoman() {
+        System.out.println("Юбка: " + this);
+    }
+
     public String toString() {
-        return String.format("Skirt{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
+        return String.format("{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
     }
 }
 
@@ -122,7 +144,12 @@ class Tie extends Clothes implements MenClothing {
     public Tie(Sizes size, double cost, String color) {
         super(size, cost, color);
     }
+
+    public void dressMan() {
+        System.out.println("Галстук: " + this);
+    }
+
     public String toString() {
-        return String.format("Tie{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
+        return String.format("{Size = " + getSize() + ", cost = %.2f, color = %s}", getCost(), getColor());
     }
 }
