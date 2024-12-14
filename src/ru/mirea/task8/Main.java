@@ -75,9 +75,7 @@ public class Main {
         recursion1(123);
         System.out.println();
         recursion2(0, 0);
-        System.out.println();
-        System.out.println("Максимальное число последовательности: " + recursion3());
-        System.out.println();
+        System.out.println("\nМаксимальное число последовательности: " + recursion3() + "\n");
         recursion4(8);
     }
 }
