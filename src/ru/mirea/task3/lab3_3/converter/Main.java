@@ -1,4 +1,4 @@
-package ru.mirea.task3.lab3_3;
+package ru.mirea.task3.lab3_3.converter;
 
 import java.util.Locale;
 import java.util.Scanner;

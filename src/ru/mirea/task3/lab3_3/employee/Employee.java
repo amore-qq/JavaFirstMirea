@@ -1,4 +1,4 @@
-package ru.mirea.task3.lab3_3;
+package ru.mirea.task3.lab3_3.employee;
 
 public class Employee {
     private String fullname;
