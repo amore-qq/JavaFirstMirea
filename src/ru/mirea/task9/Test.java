@@ -48,11 +48,13 @@ public class Test {
         for (int i = 0; i < students.length; i++) {
             students[i] = new Student(random.nextInt(500), String.format("Student №%d", i + 1));
         }
+        System.out.println("Изначальный массив: \n");
         for (Student student : students) {
             System.out.println(student);
         }
         System.out.println();
         sort(students);
+        System.out.println("Отсортированный массив: \n)");
         for (Student student : students) {
             System.out.println(student);
         }
